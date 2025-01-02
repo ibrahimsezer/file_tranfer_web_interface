@@ -1,0 +1,57 @@
+{
+  "common": {
+    "title": "Güvenli Dosya Transferi",
+    "subtitle": "Bir seçenek belirleyin",
+    "backToHome": "← Ana Sayfaya Dön",
+    "footer": {
+      "rights": "Tüm hakları saklıdır."
+    }
+  },
+  "home": {
+    "upload": {
+      "title": "Dosya Yükle",
+      "description": "Dosyalarınızı güvenli bir şekilde paylaşın"
+    },
+    "download": {
+      "title": "Dosya İndir",
+      "description": "Kod kullanarak paylaşılan dosyaları indirin"
+    }
+  },
+  "upload": {
+    "title": "Dosya Yükle",
+    "subtitle": "Dosyalarınızı tek kullanımlık kod ile güvenli bir şekilde paylaşın",
+    "dropzone": {
+      "title": "Yüklemek için tıklayın",
+      "or": "veya",
+      "dragDrop": "sürükleyip bırakın",
+      "supports": "Desteklenen formatlar: Resimler, Videolar, Ses, PDF ve Belgeler"
+    },
+    "selected": "Seçilen",
+    "type": "Tür",
+    "size": "Boyut",
+    "button": "Dosya Yükle",
+    "uploading": "Yükleniyor...",
+    "success": "Dosya başarıyla yüklendi! Bu kodu alıcıyla paylaşın.",
+    "error": {
+      "noFile": "Lütfen önce bir dosya seçin",
+      "serverError": "Sunucuya bağlanılamıyor. Lütfen sunucunun 5000 portunda çalıştığından emin olun."
+    },
+    "code": "Dosya kodunuz"
+  },
+  "download": {
+    "title": "Dosya İndir",
+    "subtitle": "İndirmek için kodu girin",
+    "form": {
+      "label": "Kodu Girin",
+      "placeholder": "Dosya kodunu girin"
+    },
+    "button": "Dosya İndir",
+    "downloading": "İndiriliyor...",
+    "success": "Dosya başarıyla indirildi!",
+    "error": {
+      "noCode": "Lütfen önce bir kod girin",
+      "invalid": "Geçersiz kod veya dosya zaten indirilmiş",
+      "generic": "Dosya indirilirken hata oluştu. Lütfen tekrar deneyin."
+    }
+  }
+} 

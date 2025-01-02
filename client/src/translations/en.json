@@ -1,0 +1,57 @@
+{
+  "common": {
+    "title": "Secure File Transfer",
+    "subtitle": "Choose an option to continue",
+    "backToHome": "← Back to Home",
+    "footer": {
+      "rights": "All rights reserved."
+    }
+  },
+  "home": {
+    "upload": {
+      "title": "Upload a File",
+      "description": "Share your files securely with others"
+    },
+    "download": {
+      "title": "Download a File",
+      "description": "Retrieve shared files using a code"
+    }
+  },
+  "upload": {
+    "title": "Upload a File",
+    "subtitle": "Share your files securely with a single-use code",
+    "dropzone": {
+      "title": "Click to upload",
+      "or": "or",
+      "dragDrop": "drag and drop",
+      "supports": "Supports: Images, Videos, Audio, PDF, and Documents"
+    },
+    "selected": "Selected",
+    "type": "Type",
+    "size": "Size",
+    "button": "Upload File",
+    "uploading": "Uploading...",
+    "success": "File uploaded successfully! Share this code with the recipient.",
+    "error": {
+      "noFile": "Please select a file first",
+      "serverError": "Cannot connect to server. Please make sure the server is running on port 5000."
+    },
+    "code": "Your file code"
+  },
+  "download": {
+    "title": "Download a File",
+    "subtitle": "Enter your file code to download",
+    "form": {
+      "label": "Enter Code",
+      "placeholder": "Enter your file code"
+    },
+    "button": "Download File",
+    "downloading": "Downloading...",
+    "success": "File downloaded successfully!",
+    "error": {
+      "noCode": "Please enter a code first",
+      "invalid": "Invalid code or file has already been downloaded",
+      "generic": "Error downloading file. Please try again."
+    }
+  }
+} 

@@ -1,0 +1,57 @@
+{
+  "common": {
+    "title": "Sichere Dateiübertragung",
+    "subtitle": "Wählen Sie eine Option",
+    "backToHome": "← Zurück zur Startseite",
+    "footer": {
+      "rights": "Alle Rechte vorbehalten."
+    }
+  },
+  "home": {
+    "upload": {
+      "title": "Datei hochladen",
+      "description": "Teilen Sie Ihre Dateien sicher mit anderen"
+    },
+    "download": {
+      "title": "Datei herunterladen",
+      "description": "Laden Sie geteilte Dateien mit einem Code herunter"
+    }
+  },
+  "upload": {
+    "title": "Datei hochladen",
+    "subtitle": "Teilen Sie Ihre Dateien sicher mit einem Einmalcode",
+    "dropzone": {
+      "title": "Zum Hochladen klicken",
+      "or": "oder",
+      "dragDrop": "per Drag & Drop ablegen",
+      "supports": "Unterstützt: Bilder, Videos, Audio, PDF und Dokumente"
+    },
+    "selected": "Ausgewählt",
+    "type": "Typ",
+    "size": "Größe",
+    "button": "Datei hochladen",
+    "uploading": "Wird hochgeladen...",
+    "success": "Datei erfolgreich hochgeladen! Teilen Sie diesen Code mit dem Empfänger.",
+    "error": {
+      "noFile": "Bitte wählen Sie zuerst eine Datei aus",
+      "serverError": "Keine Verbindung zum Server möglich. Bitte stellen Sie sicher, dass der Server auf Port 5000 läuft."
+    },
+    "code": "Ihr Dateicode"
+  },
+  "download": {
+    "title": "Datei herunterladen",
+    "subtitle": "Geben Sie den Code zum Herunterladen ein",
+    "form": {
+      "label": "Code eingeben",
+      "placeholder": "Geben Sie Ihren Dateicode ein"
+    },
+    "button": "Datei herunterladen",
+    "downloading": "Wird heruntergeladen...",
+    "success": "Datei erfolgreich heruntergeladen!",
+    "error": {
+      "noCode": "Bitte geben Sie zuerst einen Code ein",
+      "invalid": "Ungültiger Code oder Datei wurde bereits heruntergeladen",
+      "generic": "Fehler beim Herunterladen der Datei. Bitte versuchen Sie es erneut."
+    }
+  }
+} 
