@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { CloudArrowUpIcon } from '@heroicons/react/24/outline';
 import { useTranslation } from 'react-i18next';
 import axios from 'axios';
+import { API_URL } from '../config';
 
 function UploadPage() {
   const [file, setFile] = useState(null);
@@ -27,7 +28,7 @@ function UploadPage() {
 
     try {
       console.log('Uploading file:', file.name);
-      const response = await axios.post('http://localhost:5000/upload', formData, {
+      const response = await axios.post(`${API_URL}/upload`, formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
           'Accept': 'application/json',

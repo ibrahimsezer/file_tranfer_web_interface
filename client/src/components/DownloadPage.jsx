@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { ArrowDownTrayIcon } from '@heroicons/react/24/outline';
 import { useTranslation } from 'react-i18next';
 import axios from 'axios';
+import { API_URL } from '../config';
 
 function DownloadPage() {
   const [downloadCode, setDownloadCode] = useState('');
@@ -19,7 +20,7 @@ function DownloadPage() {
     setLoading(true);
     try {
       console.log('Attempting to download with code:', downloadCode);
-      const response = await axios.get(`http://localhost:5000/download/${downloadCode}`, {
+      const response = await axios.get(`${API_URL}/download/${downloadCode}`, {
         responseType: 'blob',
         headers: {
           'Accept': '*/*',

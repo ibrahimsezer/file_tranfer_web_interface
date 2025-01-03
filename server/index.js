@@ -6,14 +6,25 @@ const fs = require('fs');
 const { nanoid } = require('nanoid');
 
 const app = express();
-const port = 5000;
+const port = process.env.PORT || 5000;
+
+const allowedOrigins = [
+  'http://localhost:5173',
+  'https://secure-file-tranfer.onrender.com'
+];
 
 // Configure CORS
 app.use(cors({
-  origin: '*',
+  origin: function(origin, callback) {
+    if (!origin || allowedOrigins.indexOf(origin) !== -1) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
   methods: ['GET', 'POST', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Accept', 'Origin'],
-  credentials: false
+  credentials: true
 }));
 
 app.use((req, res, next) => {
@@ -200,6 +211,14 @@ app.get('/download/:code', (req, res) => {
     console.error('Error in download:', error);
     res.status(500).json({ error: 'Error downloading file' });
   }
+});
+
+// Statik dosyaları serve et
+app.use(express.static(path.join(__dirname, '../client/dist')));
+
+// Tüm route'ları client app'e yönlendir
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../client/dist/index.html'));
 });
 
 app.listen(port, () => {
