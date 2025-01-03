@@ -164,9 +164,9 @@ Ibrahim Sezer
 
 ## 📸 Screenshots
 
-![Home Page](client\src\assets\screenshots\home.png)
-![Upload Page](client\src\assets\screenshots\upload.png)
-![Download Page](client\src\assets\screenshots\download.png)
+![Home Page](client/src/assets/screenshots/home.png)
+![Upload Page](client/src/assets/screenshots/upload.png)
+![Download Page](client/src/assets/screenshots/download.png)
 
 ## 🌟 Star History
 
