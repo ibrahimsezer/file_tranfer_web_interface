@@ -2,6 +2,17 @@
 # Exit on error
 set -e
 
-# Install root dependencies and run build script
+# Install dependencies and build
 npm install
-npm run build 
+
+# Install client dependencies and build
+cd client
+npm install
+npm run build
+
+# Install server dependencies
+cd ../server
+npm install
+
+# Back to root
+cd .. 

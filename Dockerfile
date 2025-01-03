@@ -4,9 +4,14 @@ FROM node:18-alpine as build
 WORKDIR /app
 COPY . .
 
-# Install dependencies and build
+# Install root dependencies
 RUN npm install
-RUN npm run build
+
+# Install and build client
+RUN cd client && npm install && npm run build
+
+# Install server dependencies
+RUN cd server && npm install
 
 # Production stage
 FROM node:18-alpine
