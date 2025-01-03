@@ -4,6 +4,12 @@ A secure file transfer application that allows users to share files using single
 
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 
+## 🌟 Live Demo
+
+Try the application live at: [https://secure-file-tranfer.onrender.com](https://secure-file-tranfer.onrender.com)
+
+> Note: The live demo is hosted on Render.com's free tier, so initial load might take a few seconds if the server has been inactive.
+
 ## 🌟 Features
 
 - **Secure File Sharing**: Transfer files using single-use download codes
@@ -18,6 +24,12 @@ A secure file transfer application that allows users to share files using single
 - **Auto-cleanup**: Files are automatically deleted after download
 
 ## 🚀 Getting Started
+
+You can either use the live demo at [https://secure-file-tranfer.onrender.com](https://secure-file-tranfer.onrender.com) or run the application locally by following these steps:
+
+### Local Development
+
+The application will be available at `http://localhost:5000`
 
 ### Prerequisites
 
@@ -54,9 +66,11 @@ npm start
 npm run dev
 ```
 
-The application will be available at `http://localhost:5173`
+The application will be available at `http://localhost:5000`
 
 ## 🔧 Usage
+
+You can try the application directly at [https://secure-file-tranfer.onrender.com](https://secure-file-tranfer.onrender.com) or follow these steps for local usage: 
 
 ### Uploading a File
 
