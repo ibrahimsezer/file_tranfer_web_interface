@@ -7,8 +7,8 @@ COPY . .
 # Install root dependencies
 RUN npm install
 
-# Install and build client
-RUN cd client && npm install && npm run build
+# Install and build client (including dev dependencies)
+RUN cd client && npm install --production=false && npm run build
 
 # Install server dependencies
 RUN cd server && npm install

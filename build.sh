@@ -5,9 +5,9 @@ set -e
 # Install dependencies and build
 npm install
 
-# Install client dependencies and build
+# Install client dependencies and build (including dev dependencies)
 cd client
-npm install
+npm install --production=false
 npm run build
 
 # Install server dependencies

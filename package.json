@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "description": "Secure file transfer application",
   "scripts": {
-    "install-client": "cd client && npm install",
+    "install-client": "cd client && npm install --production=false",
     "install-server": "cd server && npm install",
-    "build-client": "cd client && npm install && npm run build",
+    "build-client": "cd client && npm install --production=false && npm run build",
     "start": "cd server && npm start",
     "build": "npm run install-server && npm run build-client"
   },
