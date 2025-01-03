@@ -1,2 +1,174 @@
-# secure_file_tranfer
-Secure file transfer with single-use code
+# Secure File Transfer
+
+A secure file transfer application that allows users to share files using single-use codes. Built with React, Node.js, and Express.
+
+![License](https://img.shields.io/badge/license-MIT-blue.svg)
+
+## 🌟 Features
+
+- **Secure File Sharing**: Transfer files using single-use download codes
+- **Multi-language Support**: Available in English, German, and Turkish
+- **Modern UI**: Clean and responsive interface built with Tailwind CSS
+- **File Type Support**: Handles various file types including:
+  - Images (JPG, PNG, GIF)
+  - Documents (PDF, DOC, DOCX, TXT)
+  - Audio (MP3, WAV)
+  - Video (MP4, MOV, AVI)
+- **File Size Limit**: Supports files up to 100MB
+- **Auto-cleanup**: Files are automatically deleted after download
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js (v14 or higher)
+- npm (v6 or higher)
+
+### Installation
+
+1. Clone the repository:
+```bash
+git clone https://github.com/ibrahimsezer/secure_file_tranfer.git
+cd secure_file_tranfer
+```
+2. Install dependencies for both client and server:
+```bash
+# Install client dependencies
+cd client
+npm install
+
+# Install server dependencies
+cd ../server
+npm install
+```
+
+3. Start the server:
+```bash
+# In the server directory
+npm start
+```
+
+4. Start the client:
+```bash
+# In the client directory
+npm run dev
+```
+
+The application will be available at `http://localhost:5173`
+
+## 🔧 Usage
+
+### Uploading a File
+
+1. Click on "Upload a File" on the home page
+2. Select a file by clicking the upload area or dragging and dropping
+3. Click "Upload File"
+4. Once uploaded, you'll receive a unique code
+5. Share this code with the recipient
+
+### Downloading a File
+
+1. Click on "Download a File" on the home page
+2. Enter the received code
+3. Click "Download File"
+4. The file will automatically download to your device
+5. Note: Each code can only be used once
+
+## 🛠️ Tech Stack
+
+### Frontend
+- React.js
+- Vite
+- Tailwind CSS
+- i18next (Internationalization)
+- Axios
+- Heroicons
+
+### Backend
+- Node.js
+- Express
+- Multer (File handling)
+- CORS
+- nanoid (Code generation)
+
+## 📁 Project Structure
+
+```
+secure_file_tranfer/
+├── client/
+│   ├── src/
+│   │   ├── components/
+│   │   ├── translations/
+│   │   ├── App.jsx
+│   │   └── main.jsx
+│   ├── public/
+│   └── package.json
+└── server/
+    ├── index.js
+    └── package.json
+```
+
+## 🌐 Internationalization
+
+The application supports multiple languages:
+- English (en)
+- German (de)
+- Turkish (tr)
+
+Language can be changed using the language switcher in the top-right corner.
+
+## 🔒 Security Features
+
+- Single-use download codes
+- Automatic file deletion after download
+- File type validation
+- Size limitations
+- Secure file storage
+
+## 💻 API Endpoints
+
+### POST `/upload`
+- Uploads a file and returns a unique code
+- Accepts multipart/form-data
+- Returns: `{ code: string }`
+
+### GET `/download/:code`
+- Downloads a file using the provided code
+- Returns: File stream with appropriate headers
+- Deletes file after successful download
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## 📝 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 👤 Author
+
+Ibrahim Sezer
+- GitHub: [@ibrahimsezer](https://github.com/ibrahimsezer)
+- LinkedIn: [ibrahim-sezer](https://www.linkedin.com/in/ibrahim-sezer/)
+- Website: [ibrahimsezer.github.io](https://ibrahimsezer.github.io)
+
+## 🙏 Acknowledgments
+
+- React.js community
+- Tailwind CSS team
+- All contributors and users of the project
+
+## 📸 Screenshots
+
+![Home Page](client\src\assets\screenshots\home.png)
+![Upload Page](client\src\assets\screenshots\upload.png)
+![Download Page](client\src\assets\screenshots\download.png)
+
+## 🌟 Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=ibrahimsezer/secure_file_tranfer&type=Date)](https://star-history.com/#ibrahimsezer/secure_file_tranfer&Date)
+
