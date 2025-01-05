@@ -1,6 +1,6 @@
 {
   "common": {
-    "title": "Sichere Dateiübertragung",
+    "title": "Dateiübertragung",
     "subtitle": "Wählen Sie eine Option",
     "backToHome": "← Zurück zur Startseite",
     "footer": {
@@ -10,7 +10,7 @@
   "home": {
     "upload": {
       "title": "Datei hochladen",
-      "description": "Teilen Sie Ihre Dateien sicher mit anderen"
+      "description": "Teilen Sie Ihre Dateien mit anderen"
     },
     "download": {
       "title": "Datei herunterladen",
@@ -19,7 +19,7 @@
   },
   "upload": {
     "title": "Datei hochladen",
-    "subtitle": "Teilen Sie Ihre Dateien sicher mit einem Einmalcode",
+    "subtitle": "Teilen Sie Ihre Dateien mit einem Einmalcode",
     "dropzone": {
       "title": "Zum Hochladen klicken",
       "or": "oder",

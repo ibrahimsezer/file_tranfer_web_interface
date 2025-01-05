@@ -1,6 +1,6 @@
 {
   "common": {
-    "title": "Secure File Transfer",
+    "title": "File Transfer",
     "subtitle": "Choose an option to continue",
     "backToHome": "← Back to Home",
     "footer": {
@@ -10,7 +10,7 @@
   "home": {
     "upload": {
       "title": "Upload a File",
-      "description": "Share your files securely with others"
+      "description": "Share your files with others"
     },
     "download": {
       "title": "Download a File",
@@ -19,7 +19,7 @@
   },
   "upload": {
     "title": "Upload a File",
-    "subtitle": "Share your files securely with a single-use code",
+    "subtitle": "Share your files with a single-use code",
     "dropzone": {
       "title": "Click to upload",
       "or": "or",

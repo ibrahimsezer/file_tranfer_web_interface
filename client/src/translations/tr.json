@@ -1,6 +1,6 @@
 {
   "common": {
-    "title": "Güvenli Dosya Transferi",
+    "title": "Dosya Transferi",
     "subtitle": "Bir seçenek belirleyin",
     "backToHome": "← Ana Sayfaya Dön",
     "footer": {
@@ -10,7 +10,7 @@
   "home": {
     "upload": {
       "title": "Dosya Yükle",
-      "description": "Dosyalarınızı güvenli bir şekilde paylaşın"
+      "description": "Dosyalarınızı paylaşın"
     },
     "download": {
       "title": "Dosya İndir",
@@ -19,7 +19,7 @@
   },
   "upload": {
     "title": "Dosya Yükle",
-    "subtitle": "Dosyalarınızı tek kullanımlık kod ile güvenli bir şekilde paylaşın",
+    "subtitle": "Dosyalarınızı tek kullanımlık kod ile paylaşın",
     "dropzone": {
       "title": "Yüklemek için tıklayın",
       "or": "veya",
