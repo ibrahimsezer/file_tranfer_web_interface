@@ -1,6 +1,6 @@
-# Secure File Transfer
+# File Transfer Web Interface
 
-A secure file transfer application that allows users to share files using single-use codes. Built with React, Node.js, and Express.
+A  file transfer application that allows users to share files using single-use codes. Built with React, Node.js, and Express.
 
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 
@@ -12,7 +12,7 @@ Try the application live at: [https://secure-file-tranfer.onrender.com](https://
 
 ## 🌟 Features
 
-- **Secure File Sharing**: Transfer files using single-use download codes
+- **File Sharing**: Transfer files using single-use download codes
 - **Multi-language Support**: Available in English, German, and Turkish
 - **Modern UI**: Clean and responsive interface built with Tailwind CSS
 - **File Type Support**: Handles various file types including:
@@ -27,10 +27,6 @@ Try the application live at: [https://secure-file-tranfer.onrender.com](https://
 
 You can either use the live demo at [https://secure-file-tranfer.onrender.com](https://secure-file-tranfer.onrender.com) or run the application locally by following these steps:
 
-### Local Development
-
-The application will be available at `http://localhost:5000`
-
 ### Prerequisites
 
 - Node.js (v14 or higher)
@@ -40,8 +36,8 @@ The application will be available at `http://localhost:5000`
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/ibrahimsezer/secure_file_tranfer.git
-cd secure_file_tranfer
+git clone https://github.com/ibrahimsezer/file_tranfer.git
+cd file_tranfer
 ```
 2. Install dependencies for both client and server:
 ```bash
@@ -108,7 +104,7 @@ You can try the application directly at [https://secure-file-tranfer.onrender.co
 ## 📁 Project Structure
 
 ```
-secure_file_tranfer/
+file_tranfer/
 ├── client/
 │   ├── src/
 │   │   ├── components/
@@ -137,7 +133,7 @@ Language can be changed using the language switcher in the top-right corner.
 - Automatic file deletion after download
 - File type validation
 - Size limitations
-- Secure file storage
+- file storage
 
 ## 💻 API Endpoints
 
