@@ -1,7 +1,7 @@
 {
-  "name": "secure-file-transfer",
+  "name": "file-transfer",
   "version": "1.0.0",
-  "description": "Secure file transfer application",
+  "description": "File transfer web interface",
   "scripts": {
     "install-client": "cd client && npm install --production=false",
     "install-server": "cd server && npm install",
@@ -11,4 +11,4 @@
   },
   "author": "Ibrahim Sezer",
   "license": "MIT"
-} 
+}

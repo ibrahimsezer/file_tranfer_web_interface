@@ -6,7 +6,7 @@ A  file transfer application that allows users to share files using single-use c
 
 ## 🌟 Live Demo
 
-Try the application live at: [https://secure-file-tranfer.onrender.com](https://secure-file-tranfer.onrender.com)
+Try the application live at: [https://file-tranfer-web-interface.onrender.com](https://file-tranfer-web-interface.onrender.com)
 
 > Note: The live demo is hosted on Render.com's free tier, so initial load might take a few seconds if the server has been inactive.
 
@@ -25,7 +25,7 @@ Try the application live at: [https://secure-file-tranfer.onrender.com](https://
 
 ## 🚀 Getting Started
 
-You can either use the live demo at [https://secure-file-tranfer.onrender.com](https://secure-file-tranfer.onrender.com) or run the application locally by following these steps:
+You can either use the live demo at [https://file-tranfer-web-interface.onrender.com](https://file-tranfer-web-interface.onrender.com) or run the application locally by following these steps:
 
 ### Prerequisites
 
@@ -66,7 +66,7 @@ The application will be available at `http://localhost:5000`
 
 ## 🔧 Usage
 
-You can try the application directly at [https://secure-file-tranfer.onrender.com](https://secure-file-tranfer.onrender.com) or follow these steps for local usage: 
+You can try the application directly at [https://file-tranfer-web-interface.onrender.com](https://file-tranfer-web-interface.onrender.com) or follow these steps for local usage: 
 
 ### Uploading a File
 
