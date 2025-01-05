@@ -6,5 +6,19 @@ export default defineConfig({
   plugins: [react()],
   build: {
     outDir: 'dist',
+    assetsDir: 'assets',
+    rollupOptions: {
+      output: {
+        manualChunks: undefined
+      }
+    }
   },
+  server: {
+    port: process.env.PORT || 10000,
+    host: true
+  },
+  preview: {
+    port: process.env.PORT || 10000,
+    host: true
+  }
 })
