@@ -28,9 +28,10 @@ function UploadPage() {
 
     try {
       console.log('Uploading file:', file.name);
+      // DÜZELTME BURADA:
       const response = await axios.post(`${API_URL}/upload`, formData, {
         headers: {
-          'Content-Type': 'multipart/form-data',
+          // 'Content-Type': 'multipart/form-data',  <-- BU SATIRI SİL! (Axios otomatik halleder)
           'Accept': 'application/json',
         },
         onUploadProgress: (progressEvent) => {
@@ -41,14 +42,12 @@ function UploadPage() {
       setCode(response.data.code);
       setMessage(t('upload.success'));
     } catch (error) {
+      // ... hata yakalama kısmı aynı kalabilir ...
       console.error('Upload error:', error);
       if (error.code === 'ERR_NETWORK') {
         setMessage(t('upload.error.serverError'));
       } else {
-        setMessage(
-          error.response?.data?.error || 
-          `Error uploading file: ${error.message}`
-        );
+        setMessage(error.response?.data?.error || `Error uploading file: ${error.message}`);
       }
     }
     setLoading(false);
