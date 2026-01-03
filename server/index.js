@@ -251,4 +251,26 @@ app.get('*', (req, res) => {
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
-}); 
+});
+
+
+// --- SERVER KEEPER (UYANIK TUTUCU) ---
+const https = require('https');
+
+// Kendi Render URL'ini buraya yazmalısın!
+// ÖRNEK: const RENDER_URL = 'https://secure-file-transfer.onrender.com';
+const RENDER_URL = 'https://file-tranfer-web-interface.onrender.com/';
+
+function keepAlive() {
+  if (RENDER_URL.includes('localhost')) return; // Localde çalışmasın
+
+  https.get(RENDER_URL, (res) => {
+    console.log(`☕ Keep-Alive Ping gönderildi. Status: ${res.statusCode}`);
+  }).on('error', (e) => {
+    console.error(`Keep-Alive Hatası: ${e.message}`);
+  });
+}
+
+// 14 dakikada bir ping at (Render 15 dk'da uyutuyor)
+// 14 * 60 * 1000 = 840000 ms
+setInterval(keepAlive, 840000);
