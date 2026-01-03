@@ -18,5 +18,8 @@
   },
   "engines": {
     "node": ">=14.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.11"
   }
 }

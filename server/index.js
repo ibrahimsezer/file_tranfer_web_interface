@@ -10,12 +10,13 @@ const port = process.env.PORT || 5000;
 
 const allowedOrigins = [
   'http://localhost:5173',
+  'http://localhost:10000',
   'https://secure-file-tranfer.onrender.com'
 ];
 
 // Configure CORS
 app.use(cors({
-  origin: function(origin, callback) {
+  origin: function (origin, callback) {
     if (!origin || allowedOrigins.indexOf(origin) !== -1) {
       callback(null, true);
     } else {
@@ -50,9 +51,9 @@ const allowedFileTypes = {
   // Documents
   'application/pdf': { ext: '.pdf', mime: 'application/pdf' },
   'application/msword': { ext: '.doc', mime: 'application/msword' },
-  'application/vnd.openxmlformats-officedocument.wordprocessingml.document': { 
-    ext: '.docx', 
-    mime: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' 
+  'application/vnd.openxmlformats-officedocument.wordprocessingml.document': {
+    ext: '.docx',
+    mime: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
   },
   'text/plain': { ext: '.txt', mime: 'text/plain' },
   // Audio
@@ -123,7 +124,7 @@ app.post('/upload', (req, res) => {
 
       const code = path.parse(req.file.filename).name;
       const filePath = path.join(uploadsDir, req.file.filename);
-      
+
       if (!fs.existsSync(filePath)) {
         return res.status(500).json({ error: 'File not saved correctly' });
       }
@@ -157,7 +158,7 @@ app.get('/download/:code', (req, res) => {
   try {
     const { code } = req.params;
     console.log('Download requested for code:', code);
-    
+
     const fileInfo = fileStore.get(code);
     if (!fileInfo) {
       return res.status(404).json({ error: 'File not found' });
