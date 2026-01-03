@@ -105,6 +105,33 @@ const upload = multer({
 // Store file codes and their details in memory
 const fileStore = new Map();
 
+// Dosyanın ömrü (1 saat = 60 * 60 * 1000 milisaniye)
+const FILE_LIFETIME = 1 * 60 * 60 * 1000;
+
+// Her 1 dakikada bir kontrol et
+setInterval(() => {
+  const now = Date.now();
+  console.log('🧹 Temizlik kontrolü yapılıyor...');
+
+  fileStore.forEach((value, key) => {
+    // Eğer dosya süresi dolmuşsa
+    if (now - new Date(value.uploadDate).getTime() > FILE_LIFETIME) {
+      console.log(`🗑️ Süresi dolan dosya siliniyor: ${value.filename} (${key})`);
+
+      // 1. Dosyayı diskten sil
+      if (fs.existsSync(value.path)) {
+        fs.unlink(value.path, (err) => {
+          if (err) console.error(`Dosya silinemedi: ${err}`);
+          else console.log('Dosya diskten silindi.');
+        });
+      }
+
+      // 2. Dosyayı hafıza kaydından (Map) sil
+      fileStore.delete(key);
+    }
+  });
+}, 60 * 1000); // 60 saniyede bir çalışır
+
 // Upload endpoint
 app.post('/upload', (req, res) => {
   upload.single('file')(req, res, function (err) {
