@@ -9,14 +9,16 @@ const app = express();
 const port = process.env.PORT || 5000;
 
 const allowedOrigins = [
-  'http://localhost:5173',
-  'http://localhost:10000',
-  'https://secure-file-tranfer.onrender.com'
+  'http://localhost:5173', // Vite Local
+  'http://localhost:5000', // Server Local
 ];
 
 // Configure CORS
+// Not: Production'da 'Same Origin' (aynı domain) olduğu için !origin kontrolü sayesinde çalışacaktır.
 app.use(cors({
   origin: function (origin, callback) {
+    // !origin: Postman veya Server-to-Server istekleri (veya aynı domain)
+    // allowedOrigins.indexOf(origin) !== -1: Listede izin verilen domainler
     if (!origin || allowedOrigins.indexOf(origin) !== -1) {
       callback(null, true);
     } else {
@@ -28,11 +30,7 @@ app.use(cors({
   credentials: true
 }));
 
-app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', '*');
-  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
-  next();
-});
+// DİKKAT: Manuel header ekleyen blok buradan SİLİNDİ (Conflict önlendi).
 
 app.use(express.json());
 
@@ -73,7 +71,6 @@ const storage = multer.diskStorage({
   },
   filename: function (req, file, cb) {
     const uniqueCode = nanoid(8);
-    // Get file extension from mime type or original filename
     const fileType = allowedFileTypes[file.mimetype];
     const fileExtension = fileType ? fileType.ext : path.extname(file.originalname);
     const filename = `${uniqueCode}${fileExtension}`;
@@ -84,7 +81,6 @@ const storage = multer.diskStorage({
 
 // File filter function
 const fileFilter = (req, file, cb) => {
-  console.log('Checking file type:', file.mimetype);
   // Check if the file type is allowed
   if (allowedFileTypes[file.mimetype]) {
     cb(null, true);
@@ -111,7 +107,8 @@ const FILE_LIFETIME = 1 * 60 * 60 * 1000;
 // Her 1 dakikada bir kontrol et
 setInterval(() => {
   const now = Date.now();
-  console.log('🧹 Temizlik kontrolü yapılıyor...');
+  // Log kirliliği yapmaması için console.log'u kaldırdım veya yorum satırı yapabilirsin
+  // console.log('🧹 Temizlik kontrolü yapılıyor...'); 
 
   fileStore.forEach((value, key) => {
     // Eğer dosya süresi dolmuşsa
@@ -130,7 +127,7 @@ setInterval(() => {
       fileStore.delete(key);
     }
   });
-}, 60 * 1000); // 60 saniyede bir çalışır
+}, 60 * 1000);
 
 // Upload endpoint
 app.post('/upload', (req, res) => {
@@ -196,17 +193,9 @@ app.get('/download/:code', (req, res) => {
       return res.status(404).json({ error: 'File not found on server' });
     }
 
-    // Ensure we have the correct mime type
     const contentType = fileInfo.mimetype || 'application/octet-stream';
-    console.log('File info:', {
-      filename: fileInfo.filename,
-      mimetype: contentType,
-      size: fileInfo.size
-    });
 
-    // Set headers for proper file download
     res.setHeader('Content-Type', contentType);
-    // Use encodeURIComponent to handle special characters in filename
     const safeFilename = encodeURIComponent(fileInfo.filename);
     res.setHeader(
       'Content-Disposition',
@@ -214,12 +203,10 @@ app.get('/download/:code', (req, res) => {
     );
     res.setHeader('Content-Length', fileInfo.size);
 
-    // Stream the file
     const fileStream = fs.createReadStream(fileInfo.path);
     fileStream.pipe(res);
 
     fileStream.on('end', () => {
-      // Delete file after successful download
       fs.unlink(fileInfo.path, (unlinkErr) => {
         if (unlinkErr) {
           console.error('Error deleting file:', unlinkErr);
@@ -257,12 +244,11 @@ app.listen(port, () => {
 // --- SERVER KEEPER (UYANIK TUTUCU) ---
 const https = require('https');
 
-// Kendi Render URL'ini buraya yazmalısın!
-// ÖRNEK: const RENDER_URL = 'https://secure-file-transfer.onrender.com';
+// Kendi Render URL'in
 const RENDER_URL = 'https://file-tranfer-web-interface.onrender.com/';
 
 function keepAlive() {
-  if (RENDER_URL.includes('localhost')) return; // Localde çalışmasın
+  if (RENDER_URL.includes('localhost')) return;
 
   https.get(RENDER_URL, (res) => {
     console.log(`☕ Keep-Alive Ping gönderildi. Status: ${res.statusCode}`);
@@ -271,6 +257,5 @@ function keepAlive() {
   });
 }
 
-// 14 dakikada bir ping at (Render 15 dk'da uyutuyor)
-// 14 * 60 * 1000 = 840000 ms
+// 14 dakikada bir ping at
 setInterval(keepAlive, 840000);
